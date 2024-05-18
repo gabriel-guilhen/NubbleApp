@@ -5,8 +5,8 @@ import {SafeAreaView} from 'react-native';
 function App(): JSX.Element {
   return (
     <SafeAreaView>
-      <Text style={{fontFamily: 'Satoshi-Bold'}}>Coffstack</Text>
-      <Text style={{fontFamily: 'Panchang-Regular'}}>Coffstack</Text>
+      {/* <Text style={{fontFamily: 'Satoshi-Bold'}}>Coffstack</Text> */}
+      <Text style={{fontFamily: 'Satoshi-MediumItalic'}}>Coffstack</Text>
     </SafeAreaView>
   );
 }
