@@ -2,15 +2,12 @@ import React from 'react';
 import {TextInput, TextInputProps} from '../TextInput/TextInput';
 import {Icon} from '../Icon/Icon';
 
-type PasswordInputProps = TextInputProps;
-export function PasswordInput(
-  props: Omit<PasswordInputProps, 'RightComponent'>,
-) {
+export type PasswordInputProps = Omit<TextInputProps, 'RightComponent'>;
+export function PasswordInput(props: PasswordInputProps) {
   const [isSecureTextEntry, setIsSecureTextEntry] = React.useState(true);
   const toggleSecureTextEntry = () => setIsSecureTextEntry(prev => !prev);
   return (
     <TextInput
-      boxProps={{mb: 's48'}}
       secureTextEntry={isSecureTextEntry}
       {...props}
       RightComponent={

@@ -25,12 +25,6 @@ export function Screen({
 
   const navigation = useNavigation();
 
-  console.log({
-    device: Platform.OS,
-    top,
-    bottom,
-  });
-
   const Container = scrollable ? ScrollViewContainer : ViewContainer;
 
   return (
