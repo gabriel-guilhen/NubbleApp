@@ -1,20 +1,21 @@
 import React from 'react';
-import {Screen} from '../../../components/Screen/Screen';
-import {Text} from '../../../components/Text/Text';
-import {Button} from '../../../components/Button/Button';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../../../routes/Routes';
-// import {useResetNavigationSuccess} from '../../../hooks/useResetNavigationSuccess';
+import {RootStackParamList} from '@routes';
 import {useForm} from 'react-hook-form';
-import FormTextInput from '../../../components/Form/FormTextInput';
-import FormPasswordInput from '../../../components/Form/FormPasswordInput';
 import {signUpSchema, SignUpSchema} from './signUpSchema';
 import {zodResolver} from '@hookform/resolvers/zod';
+import {
+  FormTextInput,
+  FormPasswordInput,
+  Text,
+  Button,
+  Screen,
+} from '@components';
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'SignUpScreen'>;
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export default function SignUpScreen({navigation}: ScreenProps) {
+export function SignUpScreen({navigation}: ScreenProps) {
   // const {reset} = useResetNavigationSuccess();
   const {control, formState, handleSubmit} = useForm<SignUpSchema>({
     resolver: zodResolver(signUpSchema),
