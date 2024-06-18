@@ -28,8 +28,6 @@ export function TextInput({
   const {colors} = useAppTheme();
   const inputRef = useRef<RNTextInput>(null);
 
-  const teste = 'aaa';
-
   const $textInputContainer: BoxProps = {
     flexDirection: 'row',
     borderWidth: errorMessage ? 2 : 1,
