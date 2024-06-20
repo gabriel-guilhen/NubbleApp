@@ -10,13 +10,14 @@ import {
   Button,
   Screen,
 } from '@components';
+import {useResetNavigationSuccess} from '@hooks';
 import {AuthScreenProps} from '@routes';
 
 import {signUpSchema, SignUpSchema} from './signUpSchema';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function SignUpScreen({navigation}: AuthScreenProps<'SignUpScreen'>) {
-  // const {reset} = useResetNavigationSuccess();
+  const {reset} = useResetNavigationSuccess();
   const {control, formState, handleSubmit} = useForm<SignUpSchema>({
     resolver: zodResolver(signUpSchema),
     defaultValues: {
@@ -27,13 +28,14 @@ export function SignUpScreen({navigation}: AuthScreenProps<'SignUpScreen'>) {
     },
     mode: 'onChange',
   });
+
   function submitForm(formValues: SignUpSchema) {
     console.log(formValues);
-    // reset({
-    //   title: 'Sua conta foi criada com sucesso!',
-    //   description: 'Agora é só fazer login na nossa plataforma!',
-    //   icon: {name: 'checkRound', color: 'success'},
-    // });
+    reset({
+      title: 'Sua conta foi criada com sucesso!',
+      description: 'Agora é só fazer login na nossa plataforma!',
+      icon: {name: 'checkRound', color: 'success'},
+    });
   }
 
   return (
